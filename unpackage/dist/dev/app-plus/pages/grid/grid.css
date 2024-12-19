@@ -1,0 +1,221 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.uni-grid-item[data-v-7a807eb7] {
+  height: 100%;
+  display: flex;
+}
+.uni-grid-item__box[data-v-7a807eb7] {
+  display: flex;
+  width: 100%;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+}
+.uni-grid-item--border[data-v-7a807eb7] {
+  position: relative;
+  z-index: 0;
+  border-bottom: 1px #D2D2D2 solid;
+  border-right: 1px #D2D2D2 solid;
+}
+.uni-grid-item--border-top[data-v-7a807eb7] {
+  position: relative;
+  border-top: 1px #D2D2D2 solid;
+  z-index: 0;
+}
+.uni-highlight[data-v-7a807eb7]:active {
+  background-color: #f1f1f1;
+}
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.uni-grid-wrap[data-v-07acefee] {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.uni-grid[data-v-07acefee] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.uni-grid--border[data-v-07acefee] {
+  position: relative;
+  z-index: 1;
+  border-left: 1px #D2D2D2 solid;
+}
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.uni-status-bar[data-v-7920e3e0] {
+  height: 20px;
+}
+
+body {
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+		background-color: #fff;
+		min-height: 100%;
+		height: auto;
+}
+uni-view {
+		font-size: 14px;
+		line-height: inherit;
+}
+.example-body {
+
+		display: flex;
+
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0;
+		font-size: 14px;
+		background-color: #ffffff;
+}
+.section-box{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 0.625rem;
+}
+.decoration{
+		width: 4px;
+		height: 12px;
+		border-radius: 10px;
+		background-color: #2979ff;
+}
+.section-text{
+		color: #333;
+		margin-left: 0.46875rem;
+}
+.example-body {
+		flex-direction: column;
+		padding: 15px;
+		background-color: #ffffff;
+}
+.image {
+		width: 1.5625rem;
+		height: 1.5625rem;
+}
+.big-number{
+		font-size: 1.5625rem;
+		font-weight: 700;
+		font-stretch: condensed;
+		font-style:oblique;
+}
+.text {
+		text-align: center;
+		font-size: 0.8125rem;
+		margin-top: 0.3125rem;
+}
+.example-body {
+
+		display: block;
+}
+.grid-item-box {
+		flex: 1;
+
+		display: flex;
+
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 15px 0;
+}
+.banner-image {
+		width: 100%;
+		height: 12.5rem;
+}
+.swiper-box {
+		height: 12.5rem;
+}
+.search-icons {
+		padding: 0.5rem;
+}
+.search-container-bar {
+
+		display: flex;
+
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		background-color: #fff;
+}
+.uni-searchbar__box {
+		border-width: 0;
+}
+.uni-input-placeholder {
+		font-size: 0.875rem;
+}

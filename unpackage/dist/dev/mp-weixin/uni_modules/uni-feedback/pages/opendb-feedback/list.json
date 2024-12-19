@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "查看反馈",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-list-item": "../../../uni-list/components/uni-list-item/uni-list-item",
+    "uni-list": "../../../uni-list/components/uni-list/uni-list",
+    "uni-load-more": "../../../uni-load-more/components/uni-load-more/uni-load-more",
+    "unicloud-db": "../../../../node-modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db",
+    "uni-fab": "../../../uni-fab/components/uni-fab/uni-fab"
+  }
+}

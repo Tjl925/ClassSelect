@@ -1,0 +1,38 @@
+
+.contact-text {
+    margin-right: 40px;
+}
+.type-text {
+    position: absolute;
+    left: 42%;
+}
+.time-text {
+    color: gray;
+    font-size: 15px;
+}
+.responded {
+    position: absolute;
+    background-color: #1AAD19;
+    border-radius: 8px;
+    color: white;
+    margin-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-up: 1px;
+    padding-bottom: 1px;
+    font-size: 18px;
+    left: 80%;
+}
+.unrespond {
+    position: absolute;
+    background-color: red;
+    border-radius: 8px;
+    color: white;
+    margin-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-up: 1px;
+    padding-bottom: 1px;
+    font-size: 18px;
+    left: 80%;
+}

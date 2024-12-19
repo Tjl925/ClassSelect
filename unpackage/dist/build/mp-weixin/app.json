@@ -1,0 +1,111 @@
+{
+  "pages": [
+    "pages/course/course",
+    "pages/material/material",
+    "pages/community/community",
+    "pages/community/detail",
+    "pages/community/search/search",
+    "pages/community/modify_community",
+    "pages/community/modify_reply",
+    "pages/course/search/search",
+    "pages/material/create_material/create_material",
+    "pages/course/create_course/create_course",
+    "pages/material/search/search",
+    "pages/grid/grid",
+    "pages/grid/manage/manageUploaded",
+    "pages/material/detail",
+    "pages/course/detail",
+    "pages/course/modify_course",
+    "pages/material/modify_material",
+    "pages/ucenter/ucenter",
+    "pages/uni-agree/uni-agree",
+    "pages/ucenter/settings/settings",
+    "pages/grid/hot/course",
+    "pages/grid/hot/material",
+    "pages/grid/hot/post",
+    "pages/ucenter/read-news-log/read-news-log",
+    "pages/ucenter/historicComments/historicComments",
+    "pages/ucenter/UpLoaded/UpLoaded"
+  ],
+  "subPackages": [
+    {
+      "root": "uni_modules/uni-feedback",
+      "pages": [
+        "pages/opendb-feedback/opendb-feedback",
+        "pages/opendb-feedback/list",
+        "pages/opendb-feedback/detail",
+        "pages/opendb-feedback/edit",
+        "pages/opendb-report/opendb-report",
+        "pages/opendb-report/list",
+        "pages/opendb-report/detail"
+      ]
+    },
+    {
+      "root": "uni_modules/uni-id-pages/pages",
+      "pages": [
+        "userinfo/userinfo",
+        "userinfo/realname-verify/realname-verify",
+        "login/login-withoutpwd",
+        "login/login-withpwd",
+        "userinfo/deactivate/deactivate",
+        "userinfo/bind-mobile/bind-mobile",
+        "login/login-smscode",
+        "register/register",
+        "retrieve/retrieve",
+        "common/webview/webview",
+        "userinfo/change_pwd/change_pwd",
+        "register/register-by-email",
+        "retrieve/retrieve-by-email",
+        "userinfo/set-pwd/set-pwd"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "选课通",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8",
+    "enablePullDownRefresh": false,
+    "rpxCalcMaxDeviceWidth": 375,
+    "rpxCalcBaseDeviceWidth": 375
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#007AFF",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/grid/grid",
+        "iconPath": "static/tabbar/grid.png",
+        "selectedIconPath": "static/tabbar/grid_active.png",
+        "text": "广场"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "iconPath": "static/tabbar/class.png",
+        "selectedIconPath": "static/tabbar/class_active.png",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/material/material",
+        "iconPath": "static/tabbar/material.png",
+        "selectedIconPath": "static/tabbar/material_active.png",
+        "text": "资料"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "iconPath": "static/tabbar/community.png",
+        "selectedIconPath": "static/tabbar/community_active.png",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/ucenter/ucenter",
+        "iconPath": "static/tabbar/me.png",
+        "selectedIconPath": "static/tabbar/me_active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

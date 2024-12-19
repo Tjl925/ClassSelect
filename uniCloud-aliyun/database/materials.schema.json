@@ -1,0 +1,86 @@
+{
+  "bsonType": "object",
+  "required": [
+    "material_name",
+    "creator_id",
+    "download_link",
+    "category"
+  ],
+  "permission": {
+    "read": true,
+    "create": true,
+    "update": true,
+    "delete": true
+  },
+  "properties": {
+    "_id": {
+      "description": "ID，系统自动生成"
+    },
+    "material_name": {
+      "bsonType": "string",
+      "title": "资料名称",
+      "description": "资料的名称",
+      "trim": "both"
+    },
+    "creator_id": {
+      "bsonType": "string",
+      "title": "创建者ID",
+      "foreignKey": "uni-id-users._id",
+      "description": "关联的用户ID"
+    },
+    "download_link": {
+      "bsonType": "string",
+      "title": "下载链接",
+      "description": "资料下载地址",
+      "format": "url",
+      "trim": "both"
+    },
+    "article_status": {
+      "bsonType": "int",
+      "title": "资料状态",
+      "description": "资料状态：0 草稿箱 1 已发布",
+      "defaultValue": 1,
+      "enum": [
+        {
+          "value": 0,
+          "text": "草稿箱"
+        },
+        {
+          "value": 1,
+          "text": "已发布"
+        }
+      ]
+    },
+    "created_at": {
+      "bsonType": "string",
+      "title": "创建时间",
+      "description": "资料的创建时间"
+    },
+    "category": {
+      "bsonType": "string",
+      "title": "类别",
+      "description": "资料所属类别",
+      "enum": ["其他", "各类表单", "实验报告", "往年试卷", "竞赛","考研","课件","课后答案","软件","重点总结"], // 这里可以替换为想要的具体类别选项
+      "trim": "both"
+    },
+    "course_name": {
+      "bsonType": "string",
+      "title": "课程名称",
+      "description": "资料关联的课程名称",
+      "trim": "both"
+    },
+    "material_image": {
+      "bsonType": "array",
+      "arrayType": "file",
+      "maxLength": 1,
+      "fileMediaType": "image",
+      "title": "资料图片"
+    },
+    "average_rating":{
+      "bsonType": "double",
+      "title": "平均分",
+      "description": "该资料的平均分",
+      "defaultValue": 0
+    }
+  }
+}

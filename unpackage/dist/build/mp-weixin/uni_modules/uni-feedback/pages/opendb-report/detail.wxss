@@ -1,0 +1,1 @@
+.report-img{border-radius:10px;border:dashed gray;max-height:150px;border-width:.5px}.container{padding:10px}.btns{margin-top:10px;display:flex;flex-direction:row}.btns button{flex:1}.btn-delete{margin-left:10px}.report-label{font-weight:700;font-size:20px}.report-content{font-size:18px}.report-row{margin-bottom:8px}.btn-deal{background-color:#6495ed;color:#fff}

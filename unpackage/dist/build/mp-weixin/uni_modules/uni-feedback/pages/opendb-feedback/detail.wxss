@@ -1,0 +1,1 @@
+.feedback-img{border-radius:10px;border:dashed gray;max-height:150px;border-width:.5px}.container{padding:10px}.btns{margin-top:10px;display:flex;flex-direction:row}.btns button{flex:1}.btn-delete{margin-left:10px}.feedback-label{font-weight:700;font-size:20px}.feedback-content{font-size:18px}.feedback-row{margin-bottom:8px}

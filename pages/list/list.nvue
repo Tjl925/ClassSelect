@@ -1,0 +1,286 @@
+<template>
+  <view class="pages">
+    <!-- #ifndef H5 -->
+    <statusBar></statusBar>
+    <!-- #endif -->
+
+    <!-- 搜索功能 -->
+    <view class="uni-search-box">
+      <uni-search-bar v-model="keyword" ref="searchBar" radius="100" cancelButton="none" disabled
+        :placeholder="inputPlaceholder" />
+      <view class="cover-search-bar" @click="searchClick"></view>
+    </view>
+
+    <unicloud-db ref='udb' v-slot:default="{data,pagination,hasMore, loading, error, options}" @error="onqueryerror"
+      :collection="colList" :page-size="10">
+      <!-- 基于 uni-list 的页面布局 field="user_id.nickname"-->
+      <uni-list class="uni-list" :border="true" :style="{height:listHight}">
+
+        <!-- 作用于app端nvue页面的下拉加载 -->
+        <!-- #ifdef APP-NVUE -->
+        <refreshBox @refresh="refresh" :loading="loading"></refreshBox>
+        <!-- #endif -->
+
+        <!-- 列表渲染 -->
+        <uni-list-item :to="'/pages/list/detail?id='+item._id+'&title='+item.material_name" v-for="(item,index) in data"
+          :key="index" , direction="row">
+          <template v-slot:body>
+            <view class="course-card">
+              <text class="materialName">{{item.material_name}}</text>
+              <image class="avatar" :src="item.creator_id[0].avatar" mode="aspectFill"></image>
+              <text class="author">{{item.creator_id[0]?item.creator_id[0].nickname:''}}</text>
+              <text class="averageRating">平均评分：{{getAverageRating(item._id)}}</text>
+            </view>
+          </template>
+        </uni-list-item>
+        <!-- 加载状态：上拉加载更多，加载中，没有更多数据了，加载错误 -->
+        <!-- #ifdef APP -->
+        <uni-list-item>
+          <template v-slot:body>
+          <!-- #endif -->
+            <uni-load-state class="load-state" @networkResume="refresh"
+              :state="{data,pagination,hasMore, loading, error}" @loadMore="loadMore">
+            </uni-load-state>
+          <!-- #ifdef APP -->
+          </template>
+        </uni-list-item>
+        <!-- #endif -->
+      </uni-list>
+    </unicloud-db>
+
+  </view>
+</template>
+
+<script>
+  let cdbRef;
+  import statusBar from "@/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar";
+
+  import Gps from '@/uni_modules/json-gps/js_sdk/gps.js';
+  const gps = new Gps(),
+    db = uniCloud.database();
+
+  export default {
+    components: {
+      statusBar
+    },
+    computed: {
+      inputPlaceholder(e) {
+        if (uni.getStorageSync('CURRENT_LANG') == "en") {
+          return 'Please enter the search content'
+        } else {
+          return '请输入搜索内容'
+        }
+      },
+      colList() {
+        return [
+          db.collection('materials').where(this.where).field('_id, material_name, creator_id')
+          .getTemp(),
+          db.collection('uni-id-users').field('_id,nickname').getTemp()
+        ]
+      }
+    },
+    data() {
+      return {
+        where: '"article_status" == 1',
+        keyword: "",
+        showRefresh: false,
+        listHight: 0,
+        averageRatings: {} // 缓存每个资料的平均分
+      }
+    },
+    watch: {
+      keyword(keyword, oldValue) {
+        let where = '"article_status" == 1 '
+        if (keyword) {
+          this.where = where + `&& /${keyword}/.test(material_name)`;
+        } else {
+          this.where = where;
+        }
+      }
+    },
+    async onReady() {
+      // #ifdef APP-NVUE
+      /* 可用窗口高度 - 搜索框高 - 状态栏高 */
+      this.listHight = uni.getSystemInfoSync().windowHeight - uni.getSystemInfoSync().statusBarHeight - 50 + 'px';
+      // #endif
+      // #ifndef APP-NVUE
+      this.listHight = 'auto'
+      // #endif
+      cdbRef = this.$refs.udb
+    },
+    async onShow() {
+      this.keyword = getApp().globalData.searchText
+      getApp().globalData.searchText = ''
+      //这里仅演示如何，在onShow生命周期获取设备位置，并在设备或者应用没有权限时自动引导。设置完毕自动重新获取。
+      //你可以基于他做自己的业务，比如：根据距离由近到远排序列表数据等
+      // uni.showLoading({
+      // 	title:"获取定位中"
+      // });
+      //默认h5端不获取定位
+      // #ifndef H5 || APP-HARMONY
+      let location = await gps.getLocation({
+        geocode: true
+      })
+      console.log(location);
+      // #endif
+      // if(location){
+      // 	uni.showToast({
+      // 		title: JSON.stringify(location),
+      // 		icon: 'none'
+      // 	});
+      // }
+      // uni.hideLoading()
+    },
+    methods: {
+      // 求平均分的函数
+      async fetchAverageRating(materialId) {
+        try {
+          // 查询material_ratings表中的rating
+          const res = await db.collection('material_ratings')
+            .where({
+              material_id: materialId
+            })
+            .field('rating')
+            .get();
+
+          const ratings = res.result.data.map(item => item.rating); // 提取所有评分
+          if (ratings.length === 0) return "暂无评分"; // 无评分情况处理
+
+          // 计算平均分
+          const average = (ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length).toFixed(2);
+          this.$set(this.averageRatings, materialId, average); // 缓存平均分
+          return average;
+        } catch (error) {
+          console.error(`获取评分失败：${error}`);
+          return "错误";
+        }
+      },
+      // 获取平均分（缓存优先）
+      getAverageRating(materialId) {
+        if (this.averageRatings[materialId]) {
+          return this.averageRatings[materialId]; // 返回缓存的平均分
+        } else {
+          // 未缓存时异步加载
+          this.fetchAverageRating(materialId);
+          return "加载中..."; // 加载状态
+        }
+      },
+      searchClick(e) { //点击搜索框
+        uni.hideKeyboard();
+        uni.navigateTo({
+          url: '/pages/list/search/search',
+          animationType: 'fade-in'
+        });
+      },
+      retry() {
+        this.refresh()
+      },
+      refresh() {
+        cdbRef.loadData({
+          clear: true
+        }, () => {
+          uni.stopPullDownRefresh()
+          // #ifdef APP-NVUE
+          this.showRefresh = false
+          // #endif
+          console.log('end');
+        })
+        console.log('refresh');
+      },
+      loadMore() {
+        cdbRef.loadMore()
+      },
+      onqueryerror(e) {
+        console.error(e);
+      },
+      onpullingdown(e) {
+        console.log(e);
+        this.showRefresh = true
+        if (e.pullingDistance > 100) {
+          this.refresh()
+        }
+      },
+      // #ifndef APP-NVUE
+      onPullDownRefresh() {
+        this.refresh()
+      },
+      onReachBottom() {
+        this.loadMore()
+      }
+      // #endif
+    },
+  }
+</script>
+
+<style scoped>
+  /* #ifndef APP-NVUE */
+  view {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+
+  /* #endif */
+  .pages {
+    background-color: #FFFFFF;
+  }
+
+  .course-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+  }
+
+  .avatar {
+    width: 10rpx;
+    height: 10rpx;
+  }
+
+  .materialName {
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .author {
+    font-size: 10px;
+    color: #999999;
+  }
+
+  .averageRating {
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .uni-search-box {
+    background-color: #FFFFFF;
+    position: sticky;
+    height: 50px;
+    top: 0;
+    left: 0;
+    /* #ifndef APP-PLUS */
+    z-index: 9;
+    /* #endif */
+    /* #ifdef MP-WEIXIN */
+    width: 580rpx;
+    /* #endif */
+  }
+
+  .cover-search-bar {
+    height: 50px;
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+    /* #ifndef APP-NVUE */
+    z-index: 999;
+    /* #endif */
+  }
+
+  .load-state {
+    justify-content: center;
+    width: 750rpx;
+  }
+</style>

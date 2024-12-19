@@ -1,0 +1,344 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.uni-flex, .uni-flex-column, .uni-content, .uni-flex-row, .uni-footer, .uni-media-box, .uni-list-box {
+  display: flex;
+}
+.uni-flex-row, .uni-footer, .uni-media-box, .uni-list-box {
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.uni-flex-column, .uni-content {
+  flex-direction: column;
+}
+.uni-color-gary {
+  color: #3b4144;
+}
+/* 标题 */
+.uni-title {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #3b4144;
+}
+.uni-title-sub {
+  display: flex;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #3b4144;
+}
+/* 描述 额外文本 */
+.uni-note {
+  margin-top: 10px;
+  color: #999;
+  font-size: 24rpx;
+}
+/* 列表内容 */
+.uni-list-box {
+  flex: 1;
+  margin-top: 10px;
+}
+/* 略缩图 */
+.uni-thumb {
+  flex-shrink: 0;
+  margin-right: 20rpx;
+  width: 125px;
+  height: 75px;
+  border-radius: 12rpx;
+  overflow: hidden;
+  border: 1px #f5f5f5 solid;
+}
+.uni-thumb image {
+  width: 100%;
+  height: 100%;
+}
+.uni-media-box {
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+.uni-media-box .uni-thumb {
+  margin: 0;
+  margin-left: 4px;
+  flex-shrink: 1;
+  width: 33%;
+  border-radius: 0;
+}
+.uni-media-box .uni-thumb:first-child {
+  margin: 0;
+}
+/* 内容 */
+.uni-content {
+  justify-content: space-between;
+}
+/* 列表footer */
+.uni-footer {
+  justify-content: space-between;
+  margin-top: 24rpx;
+}
+.uni-footer-text {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 5px;
+}
+/* 标签 */
+.uni-tag {
+  flex-shrink: 0;
+  padding: 0 5px;
+  border: 1px #c8c7cc solid;
+  margin-right: 10px;
+  border-radius: 6rpx;
+  background: #f8f8f8;
+  color: #333;
+  font-size: 24rpx;
+}
+/* 链接 */
+.uni-link {
+  margin-left: 10px;
+  color: #333;
+  text-decoration: underline;
+}
+page {
+  background-color: #f8f8f8;
+}
+.image-container {
+  width: 100%;
+  height: 18%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.image-container image {
+  margin-top: 10px;
+  object-fit: contain;
+  width: 60%;
+  height: 210px;
+  width: 210px;
+  max-height: 80%;
+  border-radius: 5px;
+}
+.action-button {
+  position: fixed;
+  right: 4%;
+  top: 2%;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+  width: 55px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.button-text {
+  margin-top: -5px;
+  font-size: 12px;
+  word-spacing: 10px;
+  letter-spacing: 1px;
+}
+.modify-icon {
+  width: 30px;
+  height: 30px;
+}
+.title {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+.stars1 {
+  display: flex;
+  margin-bottom: 5px;
+}
+.star-image {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+.rating-text {
+  margin-right: 10px;
+  margin-bottom: 4px;
+  font-size: 20px;
+  color: #f39c12;
+}
+.attributes {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.info {
+  font-size: 17px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+  background-color: rgba(255, 255, 255, 0.6);
+  /* 使背景透明，突出显示加载提示 */
+  position: absolute;
+  /* 让它覆盖在评论区框内 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  /* 和评论区的圆角一致 */
+}
+.comments-container {
+  margin-top: 10px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  height: 37vh;
+  overflow-y: auto;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+.comment-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eaeaea;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.comment-info {
+  flex: 1;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nickname {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+.created-at {
+  font-size: 12px;
+  color: #888;
+}
+.comment-text {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #555;
+  word-wrap: break-word;
+}
+.dynamic-rating {
+  margin: 15px, 0, 10px, 0;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+}
+.rating {
+  display: flex;
+  justify-content: center;
+}
+.star {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+}
+.star.active {
+  color: #f39c12;
+  /* 已评分的星星颜色 */
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent;
+}
+.info-container {
+  margin-top: 2%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: white;
+}
+.footer button {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  height: 50px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 25px;
+  background-color: #f8dccd;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+.footer button:first-child {
+  margin-left: 0;
+}
+.footer button:last-child {
+  margin-right: 0;
+}
+.footer button:active {
+  background-color: #f4bfb6;
+}
+.variant {
+  color: #fd8374;
+}

@@ -1,0 +1,75 @@
+
+.form-container.data-v-f8d8b9f9 {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-item.data-v-f8d8b9f9 {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-content.data-v-f8d8b9f9 {
+    margin: auto;
+}
+.row.data-v-f8d8b9f9 {
+    display: flex;
+    /* 使用 Flex 布局 */
+    align-items: center;
+    /* 垂直方向居中 */
+}
+.icon.data-v-f8d8b9f9 {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    /* 调整图标与文字的间距 */
+}
+.label.data-v-f8d8b9f9 {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input.data-v-f8d8b9f9 {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.submit-btn.data-v-f8d8b9f9 {
+    width: 40%;
+    padding: 10px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+.delete-btn.data-v-f8d8b9f9 {
+    margin-top: 20px;
+    width: 90%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+.back-btn.data-v-f8d8b9f9 {
+    width: 40%;
+    padding: 10px;
+    background-color: white;
+    color: #007aff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+.button-group.data-v-f8d8b9f9 {
+    display: flex;
+    flex-direction: row;
+}
+.picker.data-v-f8d8b9f9 {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

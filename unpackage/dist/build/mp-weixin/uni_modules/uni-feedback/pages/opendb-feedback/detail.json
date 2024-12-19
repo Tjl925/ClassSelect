@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "查看反馈",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-load-more": "../../../uni-load-more/components/uni-load-more/uni-load-more",
+    "unicloud-db": "../../../../node-modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db"
+  }
+}

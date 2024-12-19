@@ -1,0 +1,101 @@
+
+.form-container.data-v-a4594d10 {
+		padding: 20px;
+		margin-left: auto;
+		margin-right: auto;
+}
+.form-item.data-v-a4594d10 {
+		margin-bottom: 20px;
+		margin-left: auto;
+		margin-right: auto;
+}
+.form-content.data-v-a4594d10 {
+		margin: auto;
+}
+.row.data-v-a4594d10 {
+		display: flex;
+		/* 使用 Flex 布局 */
+		align-items: center;
+		/* 垂直方向居中 */
+}
+.icon.data-v-a4594d10 {
+		width: 30px;
+		height: 30px;
+		margin-right: 5px;
+		margin-bottom: 5px;
+		/* 调整图标与文字的间距 */
+}
+.label.data-v-a4594d10 {
+		margin-bottom: 5px;
+		font-weight: bold;
+}
+input.data-v-a4594d10 {
+		width: 90%;
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+}
+.submit-btn.data-v-a4594d10 {
+		width: 40%;
+		padding: 10px;
+		background-color: #007aff;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		text-align: center;
+}
+.delete-btn.data-v-a4594d10 {
+		margin-top: 20px;
+		width: 90%;
+		padding: 10px;
+		background-color: red;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		text-align: center;
+}
+.back-btn.data-v-a4594d10 {
+		width: 40%;
+		padding: 10px;
+		background-color: white;
+		color: #007aff;
+		border: none;
+		border-radius: 5px;
+		text-align: center;
+}
+.button-group.data-v-a4594d10 {
+		display: flex;
+		flex-direction: row;
+}
+.picker.data-v-a4594d10 {
+		width: 90%;
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+}
+.box.data-v-a4594d10 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		border: none;
+		background-color: #f8f8f8;
+		outline: none;
+		cursor: pointer;
+		transition: background-color 0.3s, transform 0.3s;
+		width: 80px;
+		max-height: 80px;
+		overflow: hidden;
+}
+.box.data-v-a4594d10:hover {
+		background-color: #ebebeb;
+}
+.box.data-v-a4594d10:active {
+		transform: translateY(2px);
+}
+.chooseAvatar.data-v-a4594d10 {
+		font-size: 18px;
+}
+.showBorder.data-v-a4594d10 {
+		border: solid 1px #ddd;
+}

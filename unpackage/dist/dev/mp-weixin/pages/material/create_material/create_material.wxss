@@ -1,0 +1,65 @@
+
+.form-container.data-v-a07c9e71 {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-item.data-v-a07c9e71 {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-content.data-v-a07c9e71 {
+    margin: auto;
+}
+.row.data-v-a07c9e71 {
+    display: flex;
+    /* 使用 Flex 布局 */
+    align-items: center;
+    /* 垂直方向居中 */
+}
+.icon.data-v-a07c9e71 {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    /* 调整图标与文字的间距 */
+}
+.label.data-v-a07c9e71 {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input.data-v-a07c9e71 {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.submit-btn.data-v-a07c9e71 {
+    width: 40%;
+    padding: 10px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+.back-btn.data-v-a07c9e71 {
+    width: 40%;
+    padding: 10px;
+    background-color: white;
+    color: #007aff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+.button-group.data-v-a07c9e71 {
+    display: flex;
+    flex-direction: row;
+}
+.picker.data-v-a07c9e71 {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

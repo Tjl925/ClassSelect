@@ -1,0 +1,268 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.uni-flex, .uni-flex-column, .uni-content, .uni-flex-row, .uni-footer, .uni-media-box, .uni-list-box {
+  display: flex;
+}
+.uni-flex-row, .uni-footer, .uni-media-box, .uni-list-box {
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.uni-flex-column, .uni-content {
+  flex-direction: column;
+}
+.uni-color-gary {
+  color: #3b4144;
+}
+/* 标题 */
+.uni-title {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #3b4144;
+}
+.uni-title-sub {
+  display: flex;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #3b4144;
+}
+/* 描述 额外文本 */
+.uni-note {
+  margin-top: 10px;
+  color: #999;
+  font-size: 24rpx;
+}
+/* 列表内容 */
+.uni-list-box {
+  flex: 1;
+  margin-top: 10px;
+}
+/* 略缩图 */
+.uni-thumb {
+  flex-shrink: 0;
+  margin-right: 20rpx;
+  width: 125px;
+  height: 75px;
+  border-radius: 12rpx;
+  overflow: hidden;
+  border: 1px #f5f5f5 solid;
+}
+.uni-thumb image {
+  width: 100%;
+  height: 100%;
+}
+.uni-media-box {
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+.uni-media-box .uni-thumb {
+  margin: 0;
+  margin-left: 4px;
+  flex-shrink: 1;
+  width: 33%;
+  border-radius: 0;
+}
+.uni-media-box .uni-thumb:first-child {
+  margin: 0;
+}
+/* 内容 */
+.uni-content {
+  justify-content: space-between;
+}
+/* 列表footer */
+.uni-footer {
+  justify-content: space-between;
+  margin-top: 24rpx;
+}
+.uni-footer-text {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 5px;
+}
+/* 标签 */
+.uni-tag {
+  flex-shrink: 0;
+  padding: 0 5px;
+  border: 1px #c8c7cc solid;
+  margin-right: 10px;
+  border-radius: 6rpx;
+  background: #f8f8f8;
+  color: #333;
+  font-size: 24rpx;
+}
+/* 链接 */
+.uni-link {
+  margin-left: 10px;
+  color: #333;
+  text-decoration: underline;
+}
+view {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+page {
+  min-height: 100%;
+}
+.course-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+}
+.avatar {
+  width: 10rpx;
+  height: 10rpx;
+}
+.materialName {
+  font-size: 10px;
+  font-weight: bold;
+}
+.author {
+  font-size: 10px;
+  color: #999999;
+}
+.averageRating {
+  font-size: 10px;
+  font-weight: bold;
+}
+.load-state {
+  justify-content: center;
+  width: 750rpx;
+}
+.button-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 25%;
+  position: fixed;
+  right: 1%;
+  top: 10%;
+  height: 50px;
+  z-index: 999;
+}
+.create-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+  right: 2%;
+  width: 70%;
+  height: 34px;
+  background-color: royalblue;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.course-name {
+  font-weight: bold;
+}
+.teacher-name {
+  position: absolute;
+  right: 21%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+}
+.teacher-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+}
+.rating {
+  position: absolute;
+  color: #fd8374;
+  right: 6%;
+}
+.course-list {
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 15px;
+  background-color: transparent;
+}
+.course-card {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+}
+.course-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.course-info text {
+  line-height: 1.5;
+}
+.uni-search-box {
+  background-color: #FFFFFF;
+  position: -webkit-sticky;
+  position: sticky;
+  height: 50px;
+  top: 10%;
+  left: 0;
+  z-index: 9;
+  width: 580rpx;
+}
+.cover-search-bar {
+  height: 50px;
+  position: relative;
+  top: -50px;
+  margin-bottom: -50px;
+  z-index: 999;
+}
+.load-state {
+  justify-content: center;
+  width: 750rpx;
+}
+.title {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+.topbar {
+  width: 100%;
+  background-color: white;
+  height: 10%;
+  z-index: 999;
+}
+.uni-list {
+  background-color: transparent;
+}
